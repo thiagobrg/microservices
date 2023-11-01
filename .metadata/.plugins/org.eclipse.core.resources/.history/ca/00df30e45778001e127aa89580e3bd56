@@ -1,0 +1,18 @@
+server:
+  port: 8761
+
+spring:
+  profiles:
+    active:
+    - ssl
+  
+eureka:
+  instance:
+    hostname: localhost
+    secure-port-enabled: true
+    secure-health-check-url: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

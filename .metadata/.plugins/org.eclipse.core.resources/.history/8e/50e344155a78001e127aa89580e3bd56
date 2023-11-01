@@ -1,0 +1,37 @@
+package com.teste.admin;
+
+import javax.net.ssl.SSLSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureBefore;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+
+import io.netty.buffer.ByteBufAllocator;
+import io.netty.handler.ssl.SslContextBuilder;
+import io.netty.handler.ssl.SslHandler;
+import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
+import io.netty.handler.ssl.util.SelfSignedCertificate;
+
+/**
+ * 
+ * @since   2023-10-24
+ * @version 0.1.0
+ * @author  <a href="http://vertis-solutions.com">Vertis Solutions</a>
+ */
+@Configuration
+@Profile("ssl")
+public class SSLConfig {
+	
+	@Autowired
+	private  SSLSession sslSession;
+	
+	@AutoConfigureBefore
+	private void setUpTest() throws Exception {
+	    SelfSignedCertificate ssc = new SelfSignedCertificate();
+	    SslHandler sslHandler = SslContextBuilder.forServer(ssc.certificate(), ssc.privateKey())
+	            .trustManager(InsecureTrustManagerFactory.INSTANCE).startTls(false).build()
+	            .newHandler(ByteBufAllocator.DEFAULT);
+	    sslSession = sslHandler.engine().getSession();
+	}
+}

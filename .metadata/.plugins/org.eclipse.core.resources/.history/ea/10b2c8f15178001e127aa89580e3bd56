@@ -1,0 +1,9 @@
+server:
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.p12
+    key-store-password: ${SMARTRTT_KEY_STORE_PASSWORD:default}
+    key-store-type: PKCS12
+    trust-store: classpath:truststore.p12
+    trust-store-password: ${SMARTRTT_KEY_STORE_PASSWORD:default}
+    trust-store-type: PKCS12

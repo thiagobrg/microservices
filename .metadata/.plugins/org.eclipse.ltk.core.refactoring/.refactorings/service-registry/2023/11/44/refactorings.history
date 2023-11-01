@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;gateway/src/main/resources&apos;&#x0D;&#x0A;- Original project: &apos;service-registry&apos;&#x0D;&#x0A;- Destination element: &apos;gateway/src/main/resources&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     application-ssl.yml&#x0D;&#x0A;     keystore.p12&#x0D;&#x0A;     truststore.p12" description="Copy files" destination="=gateway/src\/main\/resources=/maven.pomderived=/true=/" element1="src/main/resources/application-ssl.yml" element2="src/main/resources/keystore.p12" element3="src/main/resources/truststore.p12" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1698800718272" units="0" version="1.0"/>
+</session>
