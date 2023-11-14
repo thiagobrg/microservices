@@ -6,7 +6,7 @@ spring:
     name: core
   profiles:
     active:
-    - ssl
+    - development
     
 management:
   endpoints:

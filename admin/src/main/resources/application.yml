@@ -6,7 +6,7 @@ spring:
     name: admin
   profiles:
     active:
-    - ssl
+    - development
     
 eureka:
   client:
