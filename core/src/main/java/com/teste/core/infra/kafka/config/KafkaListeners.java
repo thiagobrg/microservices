@@ -18,11 +18,9 @@ public class KafkaListeners {
 	@Qualifier("taskExecutorForHeavyTasks")
 	private final ThreadPoolTaskExecutor taskExecutor;
 
+	@ThreadControl(name = "taskExecutorForHeavyTasks")
 	@KafkaListener(id = "teste-cosumer", topics = "teste", groupId = "group-1")
 	public void listen(String in) {
-		System.out.println(taskExecutor.getActiveCount() +"/"+ taskExecutor.getMaxPoolSize());
-		while((taskExecutor.getActiveCount() + 1) >= taskExecutor.getMaxPoolSize()) { try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}}
-		
 		if(in.contains("11")) {
 			executor.execute2(in);
 		}else {

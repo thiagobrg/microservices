@@ -12,8 +12,8 @@ public class MultiThreadConfig {
 	@Bean(name = "taskExecutorForHeavyTasks")
 	public ThreadPoolTaskExecutor myThreadBean() {
 	   ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-	   executor.setCorePoolSize(10);
-	   executor.setMaxPoolSize(100);
+	   executor.setCorePoolSize(1);
+	   executor.setMaxPoolSize(1);
 	   executor.setQueueCapacity(0);
 	   return executor;
 	}

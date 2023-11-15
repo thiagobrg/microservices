@@ -31,9 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-<<<<<<< HEAD
-/.metadata/
-=======
-.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log
-.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log
->>>>>>> bd1ae09 (ada)
